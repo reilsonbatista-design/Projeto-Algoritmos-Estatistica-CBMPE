@@ -1,197 +1,143 @@
-📘 Sistema de Registro de Ocorrências – CBMPE
+Sistema de Registro de Ocorrências – CBMPE
 
-Projeto acadêmico – Python (Estruturas de Dados + Estatística)
+Este projeto simula o sistema interno usado para registrar ocorrências operacionais do Corpo de Bombeiros Militar de Pernambuco (CBMPE).
+O objetivo é demonstrar o uso de estruturas de dados, organização modular, estatística e processamento de informações.
 
-Este sistema simula o back-end de um aplicativo do Corpo de Bombeiros Militar de Pernambuco (CBMPE), permitindo registrar ocorrências, filtrar, gerar estatísticas, sincronizar dados offline e exportar relatórios profissionais.
+Funcionalidades do Sistema
+1. Registro de ocorrências
 
-O projeto foi desenvolvido utilizando estruturas de dados, programação modular, tratamento de erros, árvore binária de busca, fila offline, Pandas, NumPy e estatística aplicada.
+O usuário pode cadastrar uma ocorrência informando:
 
-📂 Funcionalidades Principais
-🔥 Registro de Ocorrências
+tipo (Incêndio, Resgate, Salvamento, Acidente)
 
-Cadastro completo de uma ocorrência
+localização (Norte, Sul, Leste, Oeste)
 
-Padronização automática de digitação (incêndio, resgate, etc.)
+número de vítimas
 
-Correção de maiúsculas, acentos e erros comuns
+recursos usados
 
-Validação de data (dd/mm/aaaa)
+descrição
 
-Salvamento automático no arquivo dados.json
+status (concluída, andamento, sincronizar)
 
-📋 Listagem e Filtros
+data
 
-Listar todas as ocorrências salvas
+O sistema corrige automaticamente erros de digitação (acentos e maiúsculas/minúsculas).
 
-Filtrar por:
+2. Listagem
 
-Tipo
+Exibe todas as ocorrências armazenadas no sistema.
 
-Status
+3. Filtros
 
-Data
+O usuário pode filtrar ocorrências por:
 
-🌳 Árvore Binária de Busca (ABB)
+tipo
 
-As ocorrências também são armazenadas em uma árvore binária, utilizada para organizar e listar dados de forma ordenada.
+status
 
-📡 Modo Offline + Sincronização
+data
 
-O sistema possui:
+4. Árvore Binária
 
-Fila offline para guardar ocorrências quando não há internet
+As ocorrências também são organizadas em uma árvore binária para permitir listagem ordenada.
 
-Sincronização automática com a base principal
+5. Fila Offline
 
-Funções:
+O sistema simula o modo offline usando uma fila:
 
-adicionar_offline()
+adiciona ocorrências offline
 
-sincronizar()
+sincroniza com a base principal
 
-desfazer_sincronizacao()
+permite desfazer a última adição offline
 
-📊 Análise Estatística (Estatística Descritiva)
+6. Estatística
 
-Utiliza os valores de num_vitimas para calcular:
+Com base no número de vítimas, o sistema calcula:
 
-Média
+média
 
-Mediana
+mediana
 
-Moda
+moda
 
-Variância
+variância
 
-Desvio Padrão
+desvio padrão
 
-Interpretação automática
+Tudo é exibido no terminal de forma organizada.
 
-Além disso:
+7. Relatório Estatístico
 
-✔ exibe tudo formatado no terminal
-✔ gera relatório profissional para impressão ou envio
+Ao selecionar a opção correspondente, o sistema gera um arquivo:
 
-📄 Geração de Relatório Estatístico (TXT)
-
-O relatório completo fica salvo em:
-
-/relatorios/relatorio_estatistica.txt
+relatorios/relatorio_estatistica.txt
 
 
-Ele contém:
+Com um resumo profissional contendo:
 
-Dados analisados
+valores analisados
 
-Tendência central
+tendência central
 
-Medidas de dispersão
+dispersão
 
-Interpretação final
+interpretação final
 
-Pronto para apresentação ou anexação em documentos oficiais.
+Esse relatório pode ser enviado ou apresentado.
 
-🧩 Estrutura do Projeto
-📁 projeto/
-│
-├── main.py                # menu principal
-├── ocorrencias.py         # CRUD das ocorrências + DF + árvore
-├── arvore.py              # árvore binária de busca
-├── sincronizacao.py       # fila offline + sincronização
-├── estatistica.py         # análise estatística + relatório
-├── utils.py               # funções auxiliares
-│
-├── dados.json             # armazenamento das ocorrências
-│
-└── /relatorios/           # relatórios automáticos
-    └── relatorio_estatistica.txt
+8. Exportação
 
-▶️ Como Executar o Projeto
+As ocorrências são salvas no arquivo:
 
-Certifique-se de ter Python instalado (3.8+)
+dados.json
 
-Instale dependências:
+Estrutura do Projeto
+main.py                    -> menu do sistema
+ocorrencias.py             -> sistema principal de cadastro
+arvore.py                  -> árvore binária de busca
+sincronizacao.py           -> fila offline e sincronização
+estatistica.py             -> estatística + relatório
+utils.py                   -> funções extras
+dados.json                 -> banco de dados
+/relatorios/               -> relatório estatístico
+
+Como Executar
+
+Instale as dependências:
 
 pip install pandas numpy
 
 
-Execute o sistema:
+Execute o programa:
 
 python main.py
 
-
-Use o menu interativo:
-
---- Menu ---
-1. Registrar Ocorrência
-2. Listar Ocorrências
-3. Filtrar Ocorrências
-4. Sincronizar Offline
-5. Exportar Relatório
-6. Análise Estatística
-7. Sair
-8. Exportar relatório estatístico
-
-📌 Tecnologias e Conceitos Utilizados
+Tecnologias Usadas
 
 Python 3
 
-Pandas (armazenamento e filtros)
+Pandas
 
-NumPy (estatística)
+NumPy
 
-Estruturas de dados:
+Estruturas de dados (lista, dicionário, fila, árvore binária)
 
-Lista
+JSON
 
-Dicionário
+Estatística descritiva
 
-Fila
+Objetivo do Projeto
 
-Árvore Binária de Busca
+Atender aos requisitos acadêmicos envolvendo:
 
-Tratamento de exceções
+estruturas de dados
 
-Normalização de strings
+modularização
 
-Validação de dados
+análise estatística
 
-Arquivos JSON
+persistência de dados
 
-Geração de relatórios TXT
-
-Programação modular
-
-✅ Objetivo Acadêmico
-
-O projeto atende aos requisitos de:
-
-✔ Estruturas de dados
-✔ Persistência de dados
-✔ Funções e modularização
-✔ Estatísticas descritivas
-✔ Manipulação de texto e JSON
-✔ Boas práticas de programação
-
-👨‍🚒 Exemplo de Saída da Análise Estatística
-===== ANÁLISE ESTATÍSTICA DAS OCORRÊNCIAS =====
-
-Valores utilizados (n vítimas): [2, 5, 3]
-Total analisado: 3
-
---- Tendência Central ---
-Média: 3.33
-Mediana: 3.00
-Moda: Amodal
--------------------------
-
---- Dispersão ---
-Variância: 2.33
-Desvio Padrão: 1.52
-------------------
-===============================================
-
-📝 Licença
-
-Uso acadêmico e educacional.
-Pode ser utilizado, modificado e apresentado livremente.
+bom uso de funções
